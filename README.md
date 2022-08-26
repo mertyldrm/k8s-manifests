@@ -1,1 +1,1 @@
-# k8s-prometheus-exporters
+# k8s manifests from my internship at Peak Cloud Team
