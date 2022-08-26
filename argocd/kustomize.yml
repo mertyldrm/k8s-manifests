@@ -1,0 +1,4 @@
+resources:
+- argocd.yml
+- ingress.yml
+- service.yml

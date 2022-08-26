@@ -1,0 +1,6 @@
+resources:
+- clusterRole.yml
+- config-map.yml
+- prometheus-deployment.yml
+- prometheus-service.yml
+- volumeClaim.yml

@@ -1,0 +1,6 @@
+resources:
+- cluster-role-binding.yml
+- cluster-role.yml
+- deployment.yml
+- service-account.yml
+- service.yml

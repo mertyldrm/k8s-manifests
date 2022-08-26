@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: whatsmyip
+  labels:
+    app: whatsmyip
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: whatsmyip
+  template:
+    metadata:
+      labels:
+        app: whatsmyip
+    spec:
+      containers:
+        - name: whatsmyip
+          image: mertuila/whatsmyip:latest
+          ports:
+          - containerPort: 8080
+
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            successThreshold: 3
+          
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/sh", "-c", "sleep 90" ]
+      terminationGracePeriodSeconds: 120
