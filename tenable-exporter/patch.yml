@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: tenable-exporter
+  
+spec: 
+  template:
+    spec:
+      containers:
+        - name: tenable-exporter
+          env:
+          - name: SECRET_KEY
+            valueFrom: 
+              secretKeyRef:
+                name: tenable-credentials
+                key: SECRET_KEY
+          - name: ACCESS_KEY
+            valueFrom: 
+              secretKeyRef:
+                name: tenable-credentials
+                key: ACCESS_KEY

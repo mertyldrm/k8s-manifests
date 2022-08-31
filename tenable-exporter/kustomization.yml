@@ -1,0 +1,4 @@
+resources: 
+  - git::git@ghttps://github.com/mertyldrm/tenable-exporter-base
+patches:
+  - deployment_patch.yml  
