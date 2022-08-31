@@ -1,4 +1,4 @@
 resources: 
-  - git::git@ghttps://github.com/mertyldrm/tenable-exporter-base.git
+  - git::git@github.com/mertyldrm/tenable-exporter-base.git
 patches:
   - patch.yml  
